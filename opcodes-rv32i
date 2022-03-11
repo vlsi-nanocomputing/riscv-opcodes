@@ -48,6 +48,17 @@ lhu     rd rs1       imm12 14..12=5 6..2=0x00 1..0=3
 sb     imm12hi rs1 rs2 imm12lo 14..12=0 6..2=0x08 1..0=3
 sh     imm12hi rs1 rs2 imm12lo 14..12=1 6..2=0x08 1..0=3
 sw     imm12hi rs1 rs2 imm12lo 14..12=2 6..2=0x08 1..0=3
+sw_active_or rd rs1 imm12  14..12=3 6..2=0x0E 1..0=3  
+sw_active_and rd rs1 imm12 14..12=2 6..2=0x0E 1..0=3
+sw_active_xor rd rs1 imm12 14..12=1 6..2=0x0E 1..0=3
+sw_active_none rd rs1 imm12 14..12=0 6..2=0x0E 1..0=3
+sw_active_min rd rs1 imm12 14..12=5 6..2=0x0E 1..0=3
+sw_active_max rd rs1 imm12 14..12=6 6..2=0x0E 1..0=3
+lw_mask_and rd rs1 rs2 imm12hi 14..12=2 6..2=0x06 1..0=3
+lw_or rd rs1 rs2 imm12hi 14..12=3 6..2=0x06 1..0=3
+lw_xor rd rs1 rs2 imm12hi 14..12=1 6..2=0x06 1..0=3
+lw_min rd rs1 rs2 imm12hi 14..12=5 6..2=0x06 1..0=3
+lw_max rd rs1 rs2 imm12hi 14..12=6 6..2=0x06 1..0=3
 
 fence       fm            pred succ     rs1 14..12=0 rd 6..2=0x03 1..0=3
 fence.i     imm12                       rs1 14..12=1 rd 6..2=0x03 1..0=3
